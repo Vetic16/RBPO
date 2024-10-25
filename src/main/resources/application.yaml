@@ -9,3 +9,7 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
+
+jwt:
+  secret: MatorinFedorAndreevichBIB101200000
+  expiration: 3600000
