@@ -7,19 +7,23 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "users")
+@Table(name = "license_type")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class ApplicationUser {
+@AllArgsConstructor
+public class LicenseType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String login;
-    private String password_hash;
-    private String email;
-    private ApplicationRole role;
+    @Column(name = "name", nullable = false)
+    private String name;
+
+    @Column(name = "default_duration")
+    private Integer defaultDuration;
+
+    @Column(name = "description")
+    private String description;
 }

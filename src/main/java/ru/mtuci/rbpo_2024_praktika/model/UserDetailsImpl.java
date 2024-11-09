@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
-
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -37,7 +37,7 @@ public class UserDetailsImpl implements UserDetails {
     public static UserDetails fromApplicationUser(ApplicationUser user) {
         return new User(
                 user.getEmail(),
-                user.getPassword(),
+                user.getPassword_hash(),
                 user.getRole().getGrantedAuthorities()
         );
     }

@@ -2,10 +2,10 @@ package ru.mtuci.rbpo_2024_praktika.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.mtuci.rbpo_2024_praktika.model.Demo;
+import ru.mtuci.rbpo_2024_praktika.model.DeviceLicense;
 import ru.mtuci.rbpo_2024_praktika.model.Details;
 import ru.mtuci.rbpo_2024_praktika.repository.DetailsRepository;
-import ru.mtuci.rbpo_2024_praktika.service.DemoService;
+import ru.mtuci.rbpo_2024_praktika.service.DeviceLicenseService;
 
 @RestController
 @RequestMapping("/details")
@@ -13,13 +13,13 @@ import ru.mtuci.rbpo_2024_praktika.service.DemoService;
 public class DetailsController {
 
     private final DetailsRepository detailsRepository;
-    private final DemoService demoService;
+    private final DeviceLicenseService deviceLicenseService;
 
-    @PostMapping("/{demo_id}/save")
-    public void save(@PathVariable(value = "demo_id") Long demoId,
+    @PostMapping("/{device_license_id}/save")
+    public void save(@PathVariable(value = "device_license_id") Long deviceLicenseId,
                      @RequestBody Details details) {
-        Demo demo = demoService.findById(demoId);
-        details.setDemo(demo);
+        DeviceLicense deviceLicense = deviceLicenseService.findById(deviceLicenseId);
+        details.setDeviceLicense(deviceLicense);
         detailsRepository.save(details);
     }
 }

@@ -6,22 +6,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Entity
-@Table(name = "information")
+@Table(name = "product")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Info {
+public class Product {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
+    @Column(name = "name", nullable = false)
+    private String name;
 
-    @ManyToMany(mappedBy = "infos")
-    private List<Demo> demos;
+    @Column(name = "is_blocked", nullable = false)
+    private Boolean isBlocked;
 }

@@ -23,7 +23,7 @@ public class Details {
     private String address;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "demon_id", referencedColumnName = "id")
-    @JsonIgnoreProperties("details")
-    private Demo demo;
+    @JoinColumn(name = "device_id", referencedColumnName = "id")
+    @JsonIgnoreProperties("deviceLicenses")
+    private DeviceLicense deviceLicense;
 }
