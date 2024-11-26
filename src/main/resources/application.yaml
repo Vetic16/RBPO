@@ -2,7 +2,7 @@ spring:
   application:
     name: demo
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/demo
+    url: jdbc:mysql://localhost:3306/dbase
     username: ${JDBC_USER}
     password: ${JDBC_PASSWORD}
   jpa:
@@ -11,5 +11,5 @@ spring:
     show-sql: false
 
 jwt:
-  secret: MatorinFedorAndreevichBIB101200000
+  secret: DubovikovIgorVadimovichBKC2202
   expiration: 3600000
