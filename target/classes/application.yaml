@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:mysql://localhost:3306/dbase
+    username: ${JDBC_USER}
+    password: ${JDBC_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+jwt:
+  #secret: KakhianiIlyaKakhaberievichBKS2202
+  secret: DubovikovIgorVadimovichBKS2202000
+  accessExpiration: 3600000 # 1 час для Access токена
+  refreshExpiration: 604800000 # 7 дней для Refresh токена
+
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: classpath:serverIV.jks
+    key-store-type: JKS
+    key-store-password: serverIVPass
+    key-alias: serverIV
+keys:
+  private: ${PRIVATE_KEY_PATH}
